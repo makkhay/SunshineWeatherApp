@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:layout_margin="@dimen/medium_margin"
+    >
+
+    <ImageView
+        android:id="@+id/weather_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="@+id/description_condition_tv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/small_margin"
+        />
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/opensans_bold"
+        android:maxLines="1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_medium_textview"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/description_condition_tv"
+        app:layout_constraintLeft_toRightOf="@+id/weather_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/small_margin"
+        tools:text="Saturday" />
+
+    <TextView
+        android:id="@+id/description_condition_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/opensans_regular"
+        android:maxLines="1"
+        android:scrollHorizontally="false"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/regular_textview"
+        app:layout_constraintBottom_toTopOf="@+id/humidity_tv"
+        app:layout_constraintLeft_toRightOf="@+id/weather_icon"
+        app:layout_constraintTop_toBottomOf="@+id/day"
+        tools:text="Cloudy"
+        android:layout_marginStart="@dimen/small_margin"
+
+        />
+
+    <TextView
+        android:id="@+id/humidity_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/opensans_regular"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/regular_textview"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/pressure_tv"
+        app:layout_constraintLeft_toRightOf="@+id/weather_icon"
+        app:layout_constraintTop_toBottomOf="@+id/description_condition_tv"
+        tools:text="Humidity: 81%"
+        android:layout_marginStart="@dimen/small_margin"
+        />
+
+    <TextView
+        android:id="@+id/pressure_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/opensans_regular"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/regular_textview"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/wind_tv"
+        app:layout_constraintLeft_toRightOf="@+id/weather_icon"
+        app:layout_constraintTop_toBottomOf="@+id/humidity_tv"
+        tools:text="Pressure: 101 hPa"
+        android:layout_marginStart="@dimen/small_margin"
+
+        />
+
+    <TextView
+        android:id="@+id/wind_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:fontFamily="@font/opensans_regular"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/regular_textview"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/weather_icon"
+        app:layout_constraintTop_toBottomOf="@+id/pressure_tv"
+        tools:text="Wind: 2km/h NW"
+        android:layout_marginStart="@dimen/small_margin"
+
+        />
+
+    <TextView
+        android:id="@+id/high_temp_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="77°"
+        android:textColor="@color/black"
+        android:textSize="@dimen/small_medium_textview"
+        android:fontFamily="@font/opensans_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toEndOf="@+id/day"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/low_temp_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensans_regular"
+        android:textColor="@color/secondaryTextColor"
+        android:textSize="@dimen/regular_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toEndOf="@+id/description_condition_tv"
+        app:layout_constraintTop_toBottomOf="@+id/high_temp_tv"
+        tools:text="56°"
+        />
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/root"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wind_tv">
+    </View>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
