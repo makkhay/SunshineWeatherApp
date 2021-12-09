@@ -2,8 +2,13 @@
 A simple weather app to fetch the 10 days weather app for Atlanta.
 ● Make a request to search for "Atlanta" weather
 
+## App Screenshot
+<div style={{display: flex; flex-direction: row}}>
+  <img src="https://github.com/makkhay/SunshineWeatherApp/blob/master/Screenshot.jpg" width="270" />
+</div>
+
 ## How to load project in Android studio
-- Step 1 : Download the YelpPizzaBeer.zip folder
+- Step 1 : Download the SunshineWeatherApp.zip folder
 - Step 2 : Extract Zip folder
 - Step 3 : Open Android Studio
 - Step 4 : Select option “Open an Existing Project”
