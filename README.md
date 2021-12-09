@@ -2,6 +2,7 @@
 A simple weather app to fetch the 10 days weather app for Atlanta.
 ● Make a request to search for "Atlanta" weather
 
+## App Screenshot
 <div style={{display: flex; flex-direction: row}}>
   <img src="https://github.com/makkhay/SunshineWeatherApp/blob/master/Screenshot.jpg" width="270" />
 </div>
