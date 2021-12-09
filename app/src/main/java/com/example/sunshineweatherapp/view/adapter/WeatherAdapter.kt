@@ -11,7 +11,6 @@ import com.example.sunshineweatherapp.mapper.getWeatherIcon
 import com.example.sunshineweatherapp.model.WeatherList
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
 import kotlin.math.roundToInt
 
 class WeatherAdapter(
@@ -19,7 +18,10 @@ class WeatherAdapter(
     private val onItemClickListener: OnItemClickListener
 ) : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
 
+    //String ArrayList to store the days
     private val days = arrayListOf<String>()
+
+    //Icon list
     private val icons = arrayListOf<Int>()
 
     init {
@@ -41,8 +43,9 @@ class WeatherAdapter(
         private val onItemClickListener: OnItemClickListener
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(weather: WeatherList, days: ArrayList<String>, icons :ArrayList<Int> ) {
+        fun bind(weather: WeatherList, days: ArrayList<String>, icons: ArrayList<Int>) {
             binding.apply {
+
                 binding.day.text = days[adapterPosition]
                 binding.descriptionConditionTv.text = weather.weather[0].main
 
@@ -72,11 +75,11 @@ class WeatherAdapter(
                 binding.root.setOnClickListener {
                     onItemClickListener.onItemClicked(weather)
                     //hide or show views
-                    if(binding.humidityTv.isVisible || binding.pressureTv.isVisible || binding.windTv.isVisible){
+                    if (binding.humidityTv.isVisible || binding.pressureTv.isVisible || binding.windTv.isVisible) {
                         binding.humidityTv.visibility = View.GONE
                         binding.pressureTv.visibility = View.GONE
                         binding.windTv.visibility = View.GONE
-                    }else{
+                    } else {
                         binding.humidityTv.visibility = View.VISIBLE
                         binding.pressureTv.visibility = View.VISIBLE
                         binding.windTv.visibility = View.VISIBLE
@@ -100,12 +103,12 @@ class WeatherAdapter(
 
         val weatherItem = dataSet[position]
 
-        dataSet.forEach{
+        //populate icon arraylist based on icon string value
+        dataSet.forEach {
             icons.add(getWeatherIcon(it.weather[0].icon))
         }
 
-        // Get element from your dataset at this position and replace the
-        // contents of the view with that element
+        //bind data
         viewHolder.bind(weatherItem, days, icons)
 
     }
